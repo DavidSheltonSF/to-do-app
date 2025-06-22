@@ -28,3 +28,7 @@
 .deleteButton:hover {
   background-color: #fac942;
 }
+
+div[data-checked=true] {
+  text-decoration: line-through;
+}
