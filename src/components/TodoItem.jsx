@@ -1,5 +1,4 @@
 import styles from './todoitem.module.css';
-import { useState } from 'react';
 
 export default function TodoItem({ item, todos, setTodos }) {
   function handleDelete(item) {
