@@ -1,13 +1,21 @@
-.item {
+.itemContainer {
   width: 100%;
   color: #353935;
   font-size: 20px;
   margin: 0 auto;
 }
 
-.itemName {
+.item {
   font-weight: bold;
   padding: 20px;
+}
+
+.itemContent {
+  transition: color 0.3s ease;
+}
+
+.itemContent:hover {
+  color: #ec0404;
 }
 
 .line {
@@ -29,6 +37,6 @@
   background-color: #fac942;
 }
 
-div[data-checked=true] {
+span[data-checked=true] {
   text-decoration: line-through;
 }
