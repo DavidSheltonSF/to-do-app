@@ -9,9 +9,7 @@ export default function TodoItem({ item, todos, setTodos }) {
     const updatedTodos = todos
       .map((todo) => {
         return todo.id === item.id ? { ...todo, done: !todo.done } : todo;
-      })
-      .sort((a, b) => a.createdAt - b.createdAt)
-      .sort((a, b) => a.done - b.done);
+      });
     console.log(updatedTodos);
     setTodos(updatedTodos);
   }
