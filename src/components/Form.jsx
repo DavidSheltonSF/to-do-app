@@ -20,14 +20,14 @@ export default function Form({ todos, setTodos }) {
     <form className={styles.todoform} action="">
       <div className={styles.inputContainer}>
         <input
-          className={styles.modernInput}
+          className={styles.todoInput}
           value={todo.content}
           onChange={(e) => setTodo({ ...todo, content: e.target.value })}
           type="text"
           placeholder="Enter todo task..."
         />
         <button
-          className={styles.modernButton}
+          className={styles.submitTodoButton}
           type="submit"
           onClick={(e) => HandleSubmit(e)}
         >
