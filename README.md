@@ -13,5 +13,6 @@ TypeScript
 
 ## Knowlege applied
 - Components
-- States and Hooks
-- CSS Modules
+- Passing props through components
+- How to use a state and the useState hook
+- How to use CSS modules for style components
