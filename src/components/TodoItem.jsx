@@ -1,10 +1,6 @@
 import styles from './todoitem.module.css';
 
 export default function TodoItem({ item, todos, setTodos }) {
-  function handleDelete(item) {
-    const updatedTodos = todos.filter((todo) => todo.id !== item.id);
-    setTodos(updatedTodos);
-  }
   function handleCheck(item) {
     const updatedTodos = todos.map((todo) => {
       return todo.id === item.id ? { ...todo, done: !todo.done } : todo;
@@ -12,6 +8,11 @@ export default function TodoItem({ item, todos, setTodos }) {
     console.log(updatedTodos);
     setTodos(updatedTodos);
   }
+  function handleDelete(item) {
+    const updatedTodos = todos.filter((todo) => todo.id !== item.id);
+    setTodos(updatedTodos);
+  }
+
   return (
     <article className={styles.itemContainer}>
       <div className={styles.item}>
