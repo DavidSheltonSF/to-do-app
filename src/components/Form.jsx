@@ -7,7 +7,7 @@ export default function Form({ todos, setTodos }) {
 
   function HandleSubmit(e) {
     e.preventDefault();
-    if (todo !== '') {
+    if (todo.content !== '') {
       setTodos([
         ...todos,
         { id: uuidv4(), content: todo.content, done: false },
