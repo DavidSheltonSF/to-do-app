@@ -1,14 +1,28 @@
 import styles from './todoitem.module.css';
+import { useState } from 'react';
 
 export default function TodoItem({ item, todos, setTodos }) {
   function handleDelete(item) {
     const updatedTodos = todos.filter((todo) => todo.id !== item.id);
     setTodos(updatedTodos);
   }
+  function handleCheck(item) {
+    const updatedTodos = todos.map((todo) => {
+      return todo.id === item.id ? { ...todo, done: !todo.done } : todo;
+    });
+    console.log(updatedTodos);
+    setTodos(updatedTodos);
+  }
   return (
-    <article className={styles.item}>
-      <div className={styles.itemName}>
-        {item.content}
+    <article className={styles.itemContainer}>
+      <div className={styles.item}>
+        <span
+          className={styles.itemContent}
+          data-checked={item.done ? 'true' : 'false'}
+          onClick={() => handleCheck(item)}
+        >
+          {item.content}
+        </span>
         <span>
           <button
             onClick={() => handleDelete(item)}
