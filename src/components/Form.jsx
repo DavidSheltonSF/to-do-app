@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export default function Form({ todos, setTodos }) {
   const [todo, setTodo] = useState({
-    id: '',
+    id: undefined,
     content: '',
     done: false,
     createdAt: undefined,
