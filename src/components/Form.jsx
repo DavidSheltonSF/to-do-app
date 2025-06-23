@@ -3,13 +3,13 @@ import styles from './form.module.css';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function Form({ todos, setTodos }) {
-  const [todo, setTodo] = useState('');
+  const [todo, setTodo] = useState({id: '', content: '', done: false});
 
   function HandleSubmit(e) {
     e.preventDefault();
     if (todo !== '') {
-      setTodos([...todos, {id: uuidv4(), content: todo}]);
-      setTodo('');
+      setTodos([...todos, {id: uuidv4(), content: todo.content, done: false}]);
+      setTodo({ ...todo, content: ''});
     }
   }
 
@@ -18,8 +18,8 @@ export default function Form({ todos, setTodos }) {
       <div className={styles.inputContainer}>
         <input
           className={styles.modernInput}
-          value={todo}
-          onChange={(e) => setTodo(e.target.value)}
+          value={todo.content}
+          onChange={(e) => setTodo({ ...todo, content: e.target.value })}
           type="text"
           placeholder="Enter todo task..."
         />
