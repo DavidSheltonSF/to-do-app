@@ -5,7 +5,6 @@ export default function TodoItem({ item, todos, setTodos }) {
     const updatedTodos = todos.map((todo) => {
       return todo.id === item.id ? { ...todo, done: !todo.done } : todo;
     });
-    console.log(updatedTodos);
     setTodos(updatedTodos);
   }
   function handleDelete(item) {
