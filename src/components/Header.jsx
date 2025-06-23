@@ -1,5 +1,9 @@
 import styles from "./header.module.css"
 
 export default function Header() {
-  return <header className={styles.header}>My Todo List</header>
+  return (
+    <header className={styles.header}>
+      <span>My Todo List</span>
+    </header>
+  );
 }
