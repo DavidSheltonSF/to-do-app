@@ -3,14 +3,19 @@ import styles from './form.module.css';
 import { v4 as uuidv4 } from 'uuid';
 
 export default function Form({ todos, setTodos }) {
-  const [todo, setTodo] = useState({ id: '', content: '', done: false });
+  const [todo, setTodo] = useState({
+    id: '',
+    content: '',
+    done: false,
+    createdAt: undefined,
+  });
 
   function HandleSubmit(e) {
     e.preventDefault();
     if (todo.content !== '') {
       setTodos([
         ...todos,
-        { id: uuidv4(), content: todo.content, done: false },
+        { ...todo, id: uuidv4(), content: todo.content, createdAt: new Date() },
       ]);
       setTodo({ ...todo, content: '' });
     }
